@@ -21,42 +21,55 @@ for (let i = 1; i <= 100; i++) {
 }
 
 // Exercise 3 Section 
-let i = 1;
-
-while (i <= 100){
-    let output = "";
-
-    if (i % 3 == 0) {
-        output == "FIZZ";
-    }
-
-    if (i % 5 == 0) {
-        output == "BUZZ"
-    }
-
-    console.log('${i} ${output}');
-
-    i++
+let i = 0;
+while (i < 100) {
+if (i % 2 === 0) {
+i++;
+continue;
+} else {
+console.log(i);
+}
+i++;
 }
 
-let x = 1;
-
+// do/while loop
+let w = 0;
 do {
+if (w % 2 === 0) {
+w++;
+continue;
+} else {
+console.log(w);
+}
+w++;
+} while (w < 100);
 
-    let output = "";
 
-    if (i % 3 == 0) {
-        output == "FIZZ";
-    }
+// Section - while loop
+let y = 1;
+while (y <= 100) {
+if (y % 15 === 0) {
+console.log(y, "FIZZBUZZ");
+} else if (y % 5 === 0) {
+console.log(y, "BUZZ");
+} else if (y % 3 === 0) {
+console.log(y, "FIZZ");
+}
+y++;
+}
 
-    if (i % 5 == 0) {
-        output == "BUZZ"
-    }
-
-    console.log('${x} ${output}');
-
-    x++
-} while (x <= 100)
+// Section do/while loop
+let x = 1;
+do {
+if (x % 15 === 0) {
+console.log(x, "FIZZBUZZ");
+} else if (x % 5 === 0) {
+console.log(x, "BUZZ");
+} else if (x % 3 === 0) {
+console.log(x, "FIZZ");
+}
+x++;
+} while (x <= 100);
 
 //Exercise 4 Section
 
@@ -75,21 +88,17 @@ for ( let i = 1; i <= n; i++) {
 
 //Exercise 5 Section
 
-let fizzDivisor = Math.round(Math.random() * (10 - 1) + 1); // creates a random number between 1 and 10
-let buzzDivisor = Math.round(Math.random() * (10 - 1) + 1); // creates a random number between 1 and 10
-let start = Math.round(Math.random() * (10 - 1) + 1); // creates a random number between 1 and 10
-let end = Math.round(Math.random() * (1000 - 100) + 100); // creates a random
+let fizzDivisor = Math.round(Math.random() * (10 - 1) + 1);
+let buzzDivisor = Math.round(Math.random() * (10 - 1) + 1);
+let start = Math.round(Math.random() * (10 - 1) + 1);
+let end = Math.round(Math.random() * (1000 - 100) + 100);
 
 for (let i = start; i <= end; i++) {
-    let output = "";
-
-    if (i % fizzDivisor == 0) {
-        output += "FIZZ";
-    }
-
-    if (i % buzzDivisor == 0) {
-        output += "BUZZ";
-    }
-    
-    console.log('${i} ${output}');
+  if (i % (fizzDivisor * buzzDivisor) === 0) {
+    console.log(i, "FIZZBUZZ");
+  } else if (i % fizzDivisor === 0) {
+    console.log(i, "FIZZ");
+  } else if (i % buzzDivisor === 0) {
+    console.log(i, "BUZZ");
+  }
 }
